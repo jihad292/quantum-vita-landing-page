@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" ,bgcolor: "#dfe6ff" }}>
         <Box>
           <img
             src={
