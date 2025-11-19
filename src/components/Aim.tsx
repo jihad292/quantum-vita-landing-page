@@ -23,7 +23,7 @@ export default function Aim() {
             height="300" width="500"
           />
 
-      <Typography variant="body1" sx={{ mt: 2, maxWidth: 800 }}>
+      <Typography variant="h6" sx={{ mt: 2, maxWidth: 800 }}>
         Improve the quality of medical care while keeping healthcare costs at
         the lowest possible levels—powered by AI, automation, and seamless
         clinical workflows.

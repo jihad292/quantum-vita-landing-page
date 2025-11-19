@@ -26,7 +26,7 @@ export default function About() {
           />
           
 
-      <Typography variant="body1" fontWeight={400} sx={{ mt: 2, maxWidth: 800 }}>
+      <Typography variant="h6" fontWeight={400} sx={{ mt: 2, maxWidth: 800, }}>
         Quantum Vita is a modern EMR platform built to transform the future of
         medicine. We unify clinical workflows, automate documentation, and
         deliver AI-powered insights designed to reduce clinician workload and
