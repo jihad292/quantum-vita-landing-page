@@ -60,7 +60,7 @@ export default function Features() {
       <Grid container spacing={3}>
         {features.map((f, i) => (
           <Grid item xs={12} md={4} key={i}>
-            <Paper elevation={3} sx={{ p: 3, borderRadius: 3, height: "100%",alignItems: 'center' }}>
+            <Paper elevation={3} sx={{ p: 4, borderRadius: 3, height: "100%",alignItems: 'center' }}>
               <img 
             src=
              {f.image}
@@ -70,7 +70,7 @@ export default function Features() {
               <Typography variant="h5" fontWeight={600} color="secondary">
                 {f.title}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
+              <Typography variant="h6" sx={{ mt: 1 }}>
                 {f.text}
               </Typography>
             </Paper>

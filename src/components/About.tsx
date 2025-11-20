@@ -4,11 +4,11 @@ import theme from "../theme";
 export default function About() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
   return (
-    <Box sx={{ py: 8, px: 4, 
+    <Box sx={{ py: 6, px: 4, 
              /* display: 'flex', 
               justifyContent: 'space-between', // Puts maximum space between the two items
               alignItems: 'center'*/}}>
-      <Typography variant="h4" fontWeight={1200} color="primary" >
+      <Typography variant="h4" fontWeight={700} color="primary" >
         About Us
       </Typography>
       <Box sx={{ py: 8, px: 4, 

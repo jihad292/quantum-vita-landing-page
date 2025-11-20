@@ -13,31 +13,31 @@ export default function Footer() {
               display: 'flex', 
               justifyContent: 'flex-start',
               textAlign: "left",
-              gap: 2,
+              gap: 1,
               //bgcolor: "darkBlue.main" 
               }}>
 
-        <Typography variant="h4" fontWeight={1200} color="white" >
+        <Typography variant="h5" fontWeight={700} color="white" >
         Get To Know Us:
         </Typography>
 
-        <a href="https://www.instagram.com/quantumvita?igsh=bXdscnp6NDZ0bGRt">
-            <img height="50" width="50" 
-                  src="/images/GMAIL_LOGO.png" className="Insta" />
+        <a href="mailto:Quantumvita@outlook.com">
+            <img height="40" width="40" 
+                  src="/images/GMAIL_LOGO.png" className="MAIL" />
         </a>
 
         <a href="https://www.instagram.com/quantumvita?igsh=bXdscnp6NDZ0bGRt">
-            <img height="50" width="50" 
+            <img height="40" width="40" 
                   src="/images/instagram-logo.png" className="Insta" />
         </a>
 
         <a href="https://www.facebook.com/share/1JyKfz7k8A/">
-            <img height="50" width="50" 
+            <img height="40" width="40" 
                   src="/images/facebook-icon.png" className="FB" />
         </a>
 
         <a href="https://wa.me/96181388927">
-            <img height="50" width="50" 
+            <img height="40" width="40" 
                   src="/images/whatsapp-logo.png" className="WHATSAPP" />
         </a>
 

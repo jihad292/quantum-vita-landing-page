@@ -4,7 +4,7 @@ import theme from "../theme";
 export default function Aim() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
   return (
-    <Box sx={{ py: 8, px: 4, bgcolor: "lightBlue.main" }}>
+    <Box sx={{ py: 5, px: 4, bgcolor: "lightBlue.main" }}>
       <Typography variant="h4" fontWeight={700} color="primary">
         Our Aim
       </Typography>
