@@ -20,7 +20,7 @@ const features = [
   {
     title: "One-Click Data Collection",
     text: "Extract entire databases instantly based on inclusion/exclusion criteria.",
-    image:"/images/quantum-logo.png"
+    image:"/images/ONE_CLICK_DATA_COLLECTION_2.png"
   },
   {
     title: "Latest Articles Updates",
@@ -45,7 +45,7 @@ const features = [
   {
     title: "Cloud-Based Encryption",
     text: "Ensures data protection, compliance, and strengthens patient trust.",
-    image:"/images/79020eea2b0d65a8b4249d15bbed276d.jpg"
+    image:"/images/CLOUD_BASED_ENCRYPTION.png"
   }
 ];
 
@@ -67,7 +67,7 @@ export default function Features() {
             
             height="200" width="400" 
           />
-              <Typography variant="h6" fontWeight={600} color="secondary">
+              <Typography variant="h5" fontWeight={600} color="secondary">
                 {f.title}
               </Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
