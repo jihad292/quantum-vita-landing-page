@@ -15,13 +15,14 @@ export default function Header() {
     <AppBar position="static" color="transparent" elevation={4}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", bgcolor: "#dfe6ff", py: 5 }}>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flex: 1 }}>
-          <img height="150" width="310" 
+          <img height="150" width="280" 
         src={
           isMobile
           ? "/images/quantum-logo-mobile.png"
           : "/images/quantum-logo.png"
         }
         alt="Quantum Logo"
+        style={{ imageRendering: "crisp-edges" }}
           />
         </Box>
 
