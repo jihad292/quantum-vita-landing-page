@@ -26,7 +26,7 @@ export default function Aim() {
             <Col xs={12} lg={7}>
               <div className={styles.textCard}>
                 <p className="fs-5 lh-lg mb-3">
-                  Improve the quality of <strong style={{ fontWeight:700, color:'var(--primary)' }}>medical care</strong> while keeping healthcare costs at the <strong style={{ fontWeight:700, color:'var(--info)' }}>lowest possible levels</strong> —powered by <strong style={{ fontWeight:600, color:'var(--info)' }}>AI, automation, and seamless clinical workflows.</strong>
+                  Improve the quality of <strong style={{ fontWeight:700, color:'var(--primary)' }}>medical care</strong> while keeping healthcare costs at the <strong style={{ fontWeight:700, color:'var(--info)' }}>lowest possible levels</strong> -powered by <strong style={{ fontWeight:600, color:'var(--info)' }}>AI, automation, and seamless clinical workflows.</strong>
                 </p>
               </div>
 

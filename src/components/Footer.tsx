@@ -61,7 +61,7 @@ export default function Footer() {
           <Row>
             <Col xs={12} className="text-center">
               <div className={styles.copyRow}>
-                <div>© {new Date().getFullYear()} Quantum Vita LTD All Rights Reserved</div>
+                <div>© {new Date().getFullYear()} Quantum Vita LTD-All Rights Reserved</div>
                 <div>Transforming Healthcare with AI & Innovation</div>
               </div>
             </Col>
