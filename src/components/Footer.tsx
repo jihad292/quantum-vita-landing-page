@@ -29,10 +29,12 @@ const WhatsAppIcon = () => (
 export default function Footer() {
   return (
     <footer className={styles.outer}>
+      <div className={styles.shimmerOverlay}></div>
+      <div className={styles.orb2}></div>
       <Container fluid className="px-0">
         <Container className="py-4">
           <Row className="g-4 align-items-center">
-            <Col xs={12} md={6} className="text-center text-md-start">
+            <Col xs={12} md={6} className="text-center text-md-start" data-aos="fade-up" data-aos-duration="800">
               <div className={styles.connectTitle}>CONNECT WITH US</div>
               <div className={styles.socialIcons}>
                 <a href="mailto:Quantumvita@outlook.com" className={styles.iconLink}>
@@ -50,7 +52,7 @@ export default function Footer() {
               </div>
             </Col>
 
-            <Col xs={12} md={6} className="text-center text-md-end">
+            <Col xs={12} md={6} className="text-center text-md-end" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
               <div className={styles.contactText}>📧 Quantumvita@outlook.com</div>
               <div className={styles.contactText}>📱 +961 81 388 927</div>
             </Col>
@@ -59,7 +61,7 @@ export default function Footer() {
           <hr className={styles.divider} />
 
           <Row>
-            <Col xs={12} className="text-center">
+            <Col xs={12} className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
               <div className={styles.copyRow}>
                 <div>© {new Date().getFullYear()} Quantum Vita LTD-All Rights Reserved</div>
                 <div>Transforming Healthcare with AI & Innovation</div>

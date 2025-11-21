@@ -8,13 +8,13 @@ export default function About() {
       <div className={styles.decorative} />
       <Container fluid className="px-0">
         <Container className="py-5">
-          <div className={styles.headingRow}>
+          <div className={styles.headingRow} data-aos="fade-right">
             <div className={styles.accentBar} />
             <h2 className="display-5 fw-bold text-primary mb-0">About Us</h2>
           </div>
 
           <Row className="g-4 align-items-center">
-            <Col xs={12} lg={5} className="text-center">
+            <Col xs={12} lg={5} className="text-center" data-aos="fade-up" data-aos-delay="100">
               <img 
                 className={styles.image} 
                 src="/images/ABOUTUS.jpg" 
@@ -23,7 +23,7 @@ export default function About() {
               />
             </Col>
 
-            <Col xs={12} lg={7}>
+            <Col xs={12} lg={7} data-aos="fade-left" data-aos-delay="200">
               <p className="fs-5 mb-4">
                 <strong style={{ fontWeight: 700, color: 'var(--primary)' }}>Quantum Vita</strong> is a modern EMR platform built to transform the future of medicine. We <strong style={{ fontWeight: 600, color: 'var(--info)' }}>unify clinical workflows</strong>, automate documentation, and deliver <strong style={{ fontWeight: 600, color: 'var(--secondary)' }}>AI-powered insights</strong> designed to reduce clinician workload and improve patient outcomes.
               </p>

@@ -56,14 +56,14 @@ export default function Features() {
       <div className={styles.decorative} />
       <Container fluid className="px-0">
         <Container className="py-5">
-          <div className={styles.headingRow}>
+          <div className={styles.headingRow} data-aos="fade-right">
             <div className={styles.accentBar} />
             <h2 className="display-5 fw-bold text-primary mb-0">Features</h2>
           </div>
 
           <Row className="g-4">
             {features.map((f, i) => (
-              <Col xs={12} md={6} lg={4} key={i}>
+              <Col xs={12} md={6} lg={4} key={i} data-aos="zoom-in" data-aos-delay={i * 50}>
                 <Card className={styles.card}>
                   <div className={styles.badge}>{i + 1}</div>
                   <Card.Img variant="top" src={f.image} alt={f.title} className={styles.cardImg} />
