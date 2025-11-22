@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,10 @@ html, body, #root {
 }
 
 body {
+=======
+body {
+  margin: 0;
+>>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -33,10 +38,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 section {
   transition: opacity 0.3s ease-out;
 }
 
+=======
+>>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

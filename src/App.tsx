@@ -1,11 +1,15 @@
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
+<<<<<<< HEAD
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollProgress from "./components/ScrollProgress";
+=======
+
+>>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
 import Header from "./components/Header";
 import About from "./components/About";
 import Aim from "./components/Aim";
@@ -13,6 +17,7 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 
 export default function App() {
+<<<<<<< HEAD
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -60,6 +65,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <ScrollProgress />
       <LoadingScreen />
+=======
+  return (
+    <ThemeProvider theme={theme}>
+>>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
       <Header />
       <About />
       <Aim />
