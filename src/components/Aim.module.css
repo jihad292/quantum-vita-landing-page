@@ -1,6 +1,6 @@
 .outer {
   background: linear-gradient(135deg, #dfe6ff 0%, #c8d5ff 100%);
-  border-top: 3px solid var(--primary);
+  border-top: 3px solid rgba(29,151,241,0.4);
   position: relative;
   overflow: hidden;
   padding-top: 48px;
