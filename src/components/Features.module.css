@@ -29,16 +29,15 @@
 
 /* Glow pulse effect */
 .card:hover {
-  transform: translateY(-12px) translateZ(0) rotateX(5deg) rotateY(5deg); 
+  transform: translateY(-12px); 
   box-shadow: 0 20px 48px rgba(3,44,125,0.18), 0 0 40px rgba(29,151,241,0.3);
   animation: glowPulse 2s ease-in-out infinite;
 }
 
 .card:hover .title,
 .card:hover .desc {
-  transform: translateZ(1px);
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes glowPulse {

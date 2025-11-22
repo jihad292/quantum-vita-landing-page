@@ -77,3 +77,21 @@
   transform: translateY(0);
   box-shadow: 0 0 15px rgba(9, 66, 202, 0.5);
 }
+
+.languageButton {
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1.5px solid var(--primary);
+  background: white;
+  color: var(--primary);
+}
+
+.languageButton:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(3, 44, 125, 0.2);
+}

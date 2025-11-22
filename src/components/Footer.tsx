@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from "./Footer.module.css";
 import "../styles/variables.css";
+import { useTranslation } from '../contexts/TranslationContext';
 
 const EmailIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -27,6 +28,8 @@ const WhatsAppIcon = () => (
 );
 
 export default function Footer() {
+  const { t } = useTranslation();
+  
   return (
     <footer className={styles.outer}>
       <div className={styles.shimmerOverlay}></div>
@@ -35,7 +38,7 @@ export default function Footer() {
         <Container className="py-4">
           <Row className="g-4 align-items-center">
             <Col xs={12} md={6} className="text-center text-md-start" data-aos="fade-up" data-aos-duration="800">
-              <div className={styles.connectTitle}>CONNECT WITH US</div>
+              <div className={styles.connectTitle}>{t.footer.connectWithUs}</div>
               <div className={styles.socialIcons}>
                 <a href="mailto:Quantumvita@outlook.com" className={styles.iconLink}>
                   <EmailIcon />
@@ -63,8 +66,8 @@ export default function Footer() {
           <Row>
             <Col xs={12} className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
               <div className={styles.copyRow}>
-                <div>© {new Date().getFullYear()} Quantum Vita LTD-All Rights Reserved</div>
-                <div>Transforming Healthcare with AI & Innovation</div>
+                <div>© {new Date().getFullYear()} {t.footer.copyright}</div>
+                <div>{t.footer.tagline}</div>
               </div>
             </Col>
           </Row>

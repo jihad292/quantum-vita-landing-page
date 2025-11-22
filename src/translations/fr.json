@@ -1,0 +1,117 @@
+{
+  "header": {
+    "signIn": "Se connecter",
+    "register": "S'inscrire",
+    "contactUs": "Contactez-nous",
+    "menu": "Menu",
+    "language": "Langue",
+    "heroTitle": "Unifiez les flux de travail cliniques, automatisez la documentation et fournissez des informations alimentées par l'IA",
+    "heroSubtitle": "Conçu pour réduire la charge de travail des cliniciens et améliorer les résultats pour les patients."
+  },
+  "about": {
+    "title": "À propos de nous",
+    "description": "est une plateforme DME moderne conçue pour transformer l'avenir de la médecine. Nous",
+    "unifyWorkflows": "unifions les flux de travail cliniques",
+    "description2": ", automatisons la documentation et fournissons des",
+    "aiInsights": "informations alimentées par l'IA",
+    "description3": "conçues pour réduire la charge de travail des cliniciens et améliorer les résultats pour les patients.",
+    "bullet1": "Flux de travail cliniques unifiés",
+    "bullet2": "Documentation automatisée",
+    "bullet3": "Informations alimentées par l'IA"
+  },
+  "aim": {
+    "title": "Notre objectif",
+    "description1": "Améliorer la qualité des",
+    "medicalCare": "soins médicaux",
+    "description2": "tout en maintenant les coûts de santé aux",
+    "lowestLevels": "niveaux les plus bas possibles",
+    "description3": "-alimenté par",
+    "aiAutomation": "l'IA, l'automatisation et des flux de travail cliniques transparents.",
+    "keyPillars": "Piliers clés",
+    "pillar1": "Amélioration de la qualité grâce à la technologie",
+    "pillar2": "Optimisation des coûts grâce à l'automatisation",
+    "pillar3": "Intégration transparente des flux de travail"
+  },
+  "features": {
+    "title": "Fonctionnalités",
+    "learnMore": "En savoir plus",
+    "close": "Fermer",
+    "feature1": {
+      "title": "Transcription vocale assistée par IA",
+      "text": "Convertissez les consultations des patients en notes cliniques sans effort",
+      "detailTitle": "Transcription vocale assistée par IA",
+      "description": "La transcription vocale alimentée par l'IA de Quantum Vita transforme les consultations parlées en notes cliniques structurées en temps réel. Le système capture avec précision la terminologie médicale, formate automatiquement selon les normes cliniques et réduit le temps de documentation jusqu'à 70%, permettant aux cliniciens de se concentrer sur les soins aux patients plutôt que sur la paperasse.",
+      "clinicalImpact": "Réduisez le temps de documentation jusqu'à 70%, minimisez les erreurs et assurez une prise de notes complète sans perturber les interactions avec les patients.",
+      "visualCue": "🎤 Voix-texte en temps réel"
+    },
+    "feature2": {
+      "title": "Chat-bot de diagnostics et de support IA",
+      "text": "Accès instantané au support de décision clinique et aux suggestions de diagnostic",
+      "detailTitle": "Chat-bot de diagnostics et de support IA",
+      "description": "Un assistant IA conversationnel formé sur la littérature médicale et les directives cliniques. Il fournit des diagnostics différentiels, des recommandations de traitement, des avertissements d'interactions médicamenteuses et des protocoles fondés sur des preuves. Le chatbot apprend des modèles de pratique locaux tout en maintenant une stricte confidentialité des données et conformité.",
+      "clinicalImpact": "Accélérez la précision du diagnostic, réduisez la charge cognitive et fournissez un accès immédiat aux recommandations fondées sur des preuves au point de soins.",
+      "visualCue": "🤖 Assistant clinique alimenté par IA"
+    },
+    "feature3": {
+      "title": "Intégration des laboratoires et de l'imagerie",
+      "text": "Commandez, suivez et examinez facilement les résultats de laboratoire et l'imagerie médicale",
+      "detailTitle": "Intégration des laboratoires et de l'imagerie",
+      "description": "Les flux de travail de laboratoire et d'imagerie entièrement intégrés permettent aux cliniciens de commander des tests, de visualiser les résultats, de comparer les tendances au fil du temps et d'accéder à l'imagerie directement dans le dossier du patient. Des alertes automatisées informent les prestataires des valeurs critiques ou des résultats anormaux, garantissant une action clinique opportune.",
+      "clinicalImpact": "Rationalisez la commande de tests, réduisez le délai d'exécution pour les résultats et assurez-vous qu'aucune découverte critique ne passe inaperçue.",
+      "visualCue": "🧪 Hub de laboratoire et d'imagerie unifié"
+    },
+    "feature4": {
+      "title": "Collecte de données en un clic",
+      "text": "Capturez les signes vitaux, les symptômes et les antécédents des patients avec un minimum d'effort",
+      "detailTitle": "Collecte de données en un clic",
+      "description": "Les modèles préconfigurés et les formulaires intelligents permettent une saisie rapide des données pour les signes vitaux, les symptômes, les médicaments et les antécédents des patients. Le remplissage automatique à partir des visites précédentes et l'intégration avec des appareils connectés (par exemple, tensiomètres, glucomètres) réduisent davantage la saisie manuelle et améliorent la précision des données.",
+      "clinicalImpact": "Gagnez du temps sur la saisie de données, réduisez les erreurs de transcription et assurez une documentation cohérente et de haute qualité.",
+      "visualCue": "📋 Capture de données instantanée"
+    },
+    "feature5": {
+      "title": "Mises à jour des derniers articles",
+      "text": "Restez informé avec des actualités médicales et des mises à jour de recherche organisées",
+      "detailTitle": "Mises à jour des derniers articles",
+      "description": "Quantum Vita fournit des flux personnalisés des dernières recherches médicales, directives cliniques et actualités de l'industrie adaptés à la spécialité de chaque clinicien. Restez à jour avec les pratiques fondées sur des preuves sans quitter la plateforme.",
+      "clinicalImpact": "Maintenez à jour les connaissances cliniques, adoptez plus rapidement les nouvelles directives et améliorez la qualité du traitement grâce à l'apprentissage continu.",
+      "visualCue": "📰 Fil d'actualités médicales personnalisé"
+    },
+    "feature6": {
+      "title": "Automatisation administrative",
+      "text": "Automatisez la planification, la facturation et les tâches de conformité pour gagner du temps",
+      "detailTitle": "Automatisation administrative",
+      "description": "Automatisez la planification des rendez-vous, la vérification des assurances, les codes de facturation et les rapports de conformité. Le système gère les tâches administratives répétitives en arrière-plan, libérant le personnel pour se concentrer sur les soins aux patients et réduisant les frais généraux.",
+      "clinicalImpact": "Réduisez le fardeau administratif, diminuez les coûts opérationnels et minimisez les erreurs de facturation et les risques de conformité.",
+      "visualCue": "⚙️ Flux de travail administratifs automatisés"
+    },
+    "feature7": {
+      "title": "Audit",
+      "text": "Suivez et examinez les activités cliniques pour la conformité et l'assurance qualité",
+      "detailTitle": "Audit",
+      "description": "Des pistes d'audit complètes enregistrent chaque action effectuée dans le DME, garantissant la responsabilité et la conformité aux normes réglementaires. Les rapports automatisés aident les cabinets à se préparer aux examens d'accréditation et à identifier les domaines d'amélioration de la qualité.",
+      "clinicalImpact": "Assurez la conformité réglementaire, soutenez les initiatives d'amélioration de la qualité et protégez contre les risques juridiques et financiers.",
+      "visualCue": "🔍 Piste d'audit complète"
+    },
+    "feature8": {
+      "title": "Impact clinique",
+      "text": "Mesurez et optimisez les résultats pour améliorer la qualité des soins aux patients",
+      "detailTitle": "Impact clinique",
+      "description": "Les tableaux de bord d'analyse avancés suivent les indicateurs cliniques clés, les résultats pour les patients et les indicateurs de performance. Quantum Vita aide les cabinets à identifier les tendances, à se comparer aux pairs et à mettre en œuvre des améliorations axées sur les données dans la prestation de soins.",
+      "clinicalImpact": "Favorisez l'amélioration continue de la qualité, améliorez les résultats pour les patients et démontrez la valeur aux parties prenantes.",
+      "visualCue": "📊 Tableau de bord d'analyse des résultats"
+    },
+    "feature9": {
+      "title": "Chiffrement basé sur le cloud",
+      "text": "Stockage de données sécurisé et crypté garantissant la confidentialité et la conformité",
+      "detailTitle": "Chiffrement basé sur le cloud",
+      "description": "Toutes les données des patients sont cryptées au repos et en transit à l'aide de protocoles standard de l'industrie. L'infrastructure basée sur le cloud garantit une haute disponibilité, une reprise après sinistre et une évolutivité transparente tout en maintenant une stricte conformité avec HIPAA, RGPD et autres réglementations sur la protection des données.",
+      "clinicalImpact": "Protégez la vie privée des patients, assurez la continuité des activités et répondez à toutes les exigences réglementaires sans compromis.",
+      "visualCue": "🔐 Sécurité de niveau militaire"
+    }
+  },
+  "footer": {
+    "connectWithUs": "CONNECTEZ-VOUS AVEC NOUS",
+    "copyright": "Quantum Vita LTD - Tous droits réservés",
+    "tagline": "Transformer les soins de santé avec l'IA et l'innovation"
+  }
+}

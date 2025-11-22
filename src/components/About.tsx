@@ -1,8 +1,11 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from "./About.module.css";
 import "../styles/variables.css";
+import { useTranslation } from '../contexts/TranslationContext';
 
 export default function About() {
+  const { t } = useTranslation();
+  
   return (
     <section className={styles.outer}>
       <div className={styles.decorative} />
@@ -10,7 +13,7 @@ export default function About() {
         <Container className="py-5">
           <div className={styles.headingRow} data-aos="fade-right">
             <div className={styles.accentBar} />
-            <h2 className="display-5 fw-bold text-primary mb-0">About Us</h2>
+            <h2 className="display-5 fw-bold text-primary mb-0">{t.about.title}</h2>
           </div>
 
           <Row className="g-4 align-items-center">
@@ -25,21 +28,21 @@ export default function About() {
 
             <Col xs={12} lg={7} data-aos="fade-left" data-aos-delay="200">
               <p className="fs-5 mb-4">
-                <strong style={{ fontWeight: 700, color: 'var(--primary)' }}>Quantum Vita</strong> is a modern EMR platform built to transform the future of medicine. We <strong style={{ fontWeight: 600, color: 'var(--info)' }}>unify clinical workflows</strong>, automate documentation, and deliver <strong style={{ fontWeight: 600, color: 'var(--secondary)' }}>AI-powered insights</strong> designed to reduce clinician workload and improve patient outcomes.
+                <strong style={{ fontWeight: 700, color: 'var(--primary)' }}>Quantum Vita</strong> {t.about.description} <strong style={{ fontWeight: 600, color: 'var(--info)' }}>{t.about.unifyWorkflows}</strong>{t.about.description2} <strong style={{ fontWeight: 600, color: 'var(--secondary)' }}>{t.about.aiInsights}</strong> {t.about.description3}
               </p>
 
               <div className={styles.bullets}>
                 <div className={styles.bulletRow}>
                   <div className={styles.bulletDot} />
-                  <p className="fs-6 mb-0">Unified clinical workflows</p>
+                  <p className="fs-6 mb-0">{t.about.bullet1}</p>
                 </div>
                 <div className={styles.bulletRow}>
                   <div className={styles.bulletDot} />
-                  <p className="fs-6 mb-0">Automated documentation</p>
+                  <p className="fs-6 mb-0">{t.about.bullet2}</p>
                 </div>
                 <div className={styles.bulletRow}>
                   <div className={styles.bulletDot} />
-                  <p className="fs-6 mb-0">AI-powered insights</p>
+                  <p className="fs-6 mb-0">{t.about.bullet3}</p>
                 </div>
               </div>
             </Col>

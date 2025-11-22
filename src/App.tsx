@@ -33,9 +33,9 @@ export default function App() {
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
-        // Fade when scrolling down (section going up past viewport)
-        if (rect.top < -rect.height * 0.3) {
-          const fadePoint = (Math.abs(rect.top) - rect.height * 0.3) / (rect.height * 0.7);
+        // Fade when scrolling down (section going up past viewport) - starts later
+        if (rect.top < -rect.height * 0.8) {
+          const fadePoint = (Math.abs(rect.top) - rect.height * 0.8) / (rect.height * 0.7);
           const opacity = Math.max(0, 1 - fadePoint);
           (section as HTMLElement).style.opacity = opacity.toString();
         } 
