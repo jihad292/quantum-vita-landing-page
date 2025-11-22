@@ -31,7 +31,7 @@ export default function Footer() {
     <footer className={styles.outer}>
       <div className={styles.shimmerOverlay}></div>
       <div className={styles.orb2}></div>
-      <Container fluid className="px-0">
+      <Container fluid className="px-0" style={{ position: 'relative', zIndex: 1 }}>
         <Container className="py-4">
           <Row className="g-4 align-items-center">
             <Col xs={12} md={6} className="text-center text-md-start" data-aos="fade-up" data-aos-duration="800">
