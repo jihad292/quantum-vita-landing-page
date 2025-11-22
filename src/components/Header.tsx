@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container, Offcanvas, Dropdown } from 'react-bootstrap';
 import styles from "./Header.module.css";
@@ -166,47 +165,3 @@ export default function Header() {
 }
                
 
-=======
-import {
-  AppBar,
-  Toolbar,
-  Button,
-  Box,
-  Typography,
-  useMediaQuery
-} from "@mui/material";
-import theme from "../theme";
-
-export default function Header() {
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-  return (
-    <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" ,bgcolor: "#dfe6ff" }}>
-        <Box>
-          <img
-            src={
-              isMobile
-                ? "/images/quantum-logo-mobile.png"
-                : "/images/quantum-logo.png"
-            }
-            alt="Quantum Logo"
-          />
-        </Box>
-
-        <Box>
-          <Button color="primary" sx={{ mx: 1 }}>
-            Sign In
-          </Button>
-          <Button color="secondary" variant="contained" sx={{ mx: 1 }}>
-            Sign Up
-          </Button>
-          <Button color="primary" sx={{ mx: 1 }}>
-            Contact Us
-          </Button>
-        </Box>
-      </Toolbar>
-    </AppBar>
-  );
-}
->>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87

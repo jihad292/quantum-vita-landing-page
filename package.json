@@ -13,7 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
-<<<<<<< HEAD
+    "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
@@ -21,12 +21,6 @@
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
-=======
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
->>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -58,12 +52,8 @@
   },
   "engines": {
     "node": "22.19"
-<<<<<<< HEAD
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "@types/react": "^19.2.6"
-=======
->>>>>>> 7abb2ecb50083425128a58655eefd31f150c8f87
+    "@types/aos": "^3.0.7"
   }
 }
