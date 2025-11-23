@@ -134,6 +134,14 @@
   pointer-events: none;
 }
 
+.modalWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+}
+
 .modalHeader {
   background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%);
   color: white;
@@ -156,37 +164,57 @@
 }
 
 .modalBody {
-  padding: 30px;
+  padding: 20px 60px 30px 60px;
   background: white;
   overflow-y: auto;
+  overflow-x: hidden;
   flex: 1;
+  position: relative;
+}
+
+.modalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: var(--info);
 }
 
 .modalImage {
   width: 100%;
   height: auto;
-  max-height: 250px;
+  max-height: 200px;
   object-fit: contain;
   border-radius: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 .detailSection {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .sectionLabel {
   color: var(--primary);
   font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+  font-size: 1rem;
+  margin-bottom: 6px;
 }
 
 .sectionContent {
   color: #444;
-  line-height: 1.7;
-  font-size: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
   margin-bottom: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -211,6 +239,157 @@
   border-radius: 20px;
   padding: 8px 24px;
   font-weight: 600;
+}
+
+/* Navigation Arrows */
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1070;
+  box-shadow: 0 4px 16px rgba(3,44,125,0.15);
+  padding: 0;
+  line-height: 1;
+}
+
+.navArrow:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(3,44,125,0.3);
+}
+
+.navArrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.navArrowLeft {
+  left: 10px;
+}
+
+.navArrowRight {
+  right: 10px;
+}
+
+/* Responsive adjustments for arrows */
+@media (max-width: 1200px) {
+  .navArrowLeft {
+    left: 10px;
+  }
+  
+  .navArrowRight {
+    right: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .modalBody {
+    padding: 20px 55px 30px 55px;
+  }
+  
+  .navArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+  
+  .navArrowLeft {
+    left: 8px;
+  }
+  
+  .navArrowRight {
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalBody {
+    padding: 20px 50px 25px 50px;
+  }
+  
+  .navArrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+  
+  .navArrowLeft {
+    left: 8px;
+  }
+  
+  .navArrowRight {
+    right: 8px;
+  }
+  
+  .modalImage {
+    max-height: 180px;
+    margin-bottom: 16px;
+  }
+  
+  .sectionLabel {
+    font-size: 0.95rem;
+  }
+  
+  .sectionContent {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modalBody {
+    padding: 15px 45px 20px 45px;
+  }
+  
+  .navArrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  
+  .navArrowLeft {
+    left: 6px;
+  }
+  
+  .navArrowRight {
+    right: 6px;
+  }
+  
+  .modalImage {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalBody {
+    padding: 15px 40px 20px 40px;
+  }
+  
+  .navArrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .navArrowLeft {
+    left: 5px;
+  }
+  
+  .navArrowRight {
+    right: 5px;
+  }
 }
 
 @media (max-width:900px) { .grid{ grid-template-columns: repeat(2,1fr); } }

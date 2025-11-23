@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Card, Modal, Button } from 'react-bootstrap';
 import styles from "./Features.module.css";
 import "../styles/variables.css";
@@ -8,6 +8,8 @@ export default function Features() {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState<any | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const modalBodyRef = useRef<HTMLDivElement>(null);
 
   // Build features array from translations
   const features = [
@@ -94,8 +96,9 @@ export default function Features() {
     }
   ];
 
-  const handleShowDetails = (feature: any) => {
+  const handleShowDetails = (feature: any, index: number) => {
     setSelectedFeature(feature);
+    setCurrentIndex(index);
     setShowModal(true);
   };
 
@@ -103,6 +106,48 @@ export default function Features() {
     setShowModal(false);
     setTimeout(() => setSelectedFeature(null), 300);
   };
+
+  const handlePrevious = () => {
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : features.length - 1;
+    setCurrentIndex(newIndex);
+    setSelectedFeature(features[newIndex]);
+  };
+
+  const handleNext = () => {
+    const newIndex = currentIndex < features.length - 1 ? currentIndex + 1 : 0;
+    setCurrentIndex(newIndex);
+    setSelectedFeature(features[newIndex]);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!showModal) return;
+      
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrevious();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (modalBodyRef.current) {
+          modalBodyRef.current.scrollBy({ top: -100, behavior: 'smooth' });
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (modalBodyRef.current) {
+          modalBodyRef.current.scrollBy({ top: 100, behavior: 'smooth' });
+        }
+      } else if (e.key === 'Escape') {
+        handleCloseModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [showModal, currentIndex, features]);
 
   return (
     <section className={styles.outer}>
@@ -117,7 +162,7 @@ export default function Features() {
           <Row className="g-4">
             {features.map((f, i) => (
               <Col xs={12} md={6} lg={4} key={i} data-aos="zoom-in" data-aos-delay={i * 50}>
-                <Card className={styles.card} onClick={() => handleShowDetails(f)} style={{ cursor: 'pointer' }}>
+                <Card className={styles.card} onClick={() => handleShowDetails(f, i)} style={{ cursor: 'pointer' }}>
                   <div className={styles.badge}>{i + 1}</div>
                   <Card.Img variant="top" src={f.image} alt={f.title} className={styles.cardImg} />
                   <Card.Body>
@@ -130,7 +175,7 @@ export default function Features() {
                         className={styles.detailsButton}
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleShowDetails(f);
+                          handleShowDetails(f, i);
                         }}
                       >
                         {t.features.learnMore} →
@@ -151,12 +196,27 @@ export default function Features() {
         size="lg"
         className={styles.featureModal}
       >
-        <Modal.Header closeButton className={styles.modalHeader}>
-          <Modal.Title className={styles.modalTitle}>
-            {selectedFeature?.title}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className={styles.modalBody}>
+        <div className={styles.modalWrapper}>
+          <button 
+            className={styles.navArrow + ' ' + styles.navArrowLeft}
+            onClick={handlePrevious}
+            aria-label="Previous feature"
+          >
+            ‹
+          </button>
+          <button 
+            className={styles.navArrow + ' ' + styles.navArrowRight}
+            onClick={handleNext}
+            aria-label="Next feature"
+          >
+            ›
+          </button>
+          <Modal.Header closeButton className={styles.modalHeader}>
+            <Modal.Title className={styles.modalTitle}>
+              {selectedFeature?.title}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className={styles.modalBody} ref={modalBodyRef}>
           {selectedFeature && (
             <>
               <img 
@@ -191,6 +251,7 @@ export default function Features() {
             {t.features.close}
           </Button>
         </Modal.Footer>
+        </div>
       </Modal>
     </section>
   );
