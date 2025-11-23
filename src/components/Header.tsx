@@ -88,7 +88,7 @@ export default function Header() {
                 src="/images/quantum-logo.png"
                 alt="Quantum Logo"
                 style={{ 
-                  height: isMobile ? 80 : 120, 
+                  height: isMobile ? 65 : 95, 
                   width: 'auto'
                 }}
                 className={styles.logo}
@@ -96,9 +96,9 @@ export default function Header() {
             </Navbar.Brand>
 
             <div className="d-none d-xl-flex gap-2 position-absolute end-0 me-3">
-              <Button variant="link" className={`text-primary fw-bold ${styles.glowButton}`}>{t.header.signIn}</Button>
+              <Button variant="primary" className={styles.glowButton}>{t.header.signIn}</Button>
               <Button variant="primary" className={styles.glowButton}>{t.header.register}</Button>
-              <Button variant="link" className={`text-primary fw-bold ${styles.glowButton}`}>{t.header.contactUs}</Button>
+              <Button variant="primary" className={styles.glowButton}>{t.header.contactUs}</Button>
             </div>
 
             <Button 
@@ -139,7 +139,7 @@ export default function Header() {
         </Offcanvas.Body>
       </Offcanvas>
 
-      <div className={styles.heroOuter} style={{ marginTop: window.innerWidth < 768 ? '110px' : '145px', opacity: heroOpacity, transition: 'opacity 0.3s ease-out' }}>
+      <div className={styles.heroOuter} style={{ marginTop: window.innerWidth < 768 ? '90px' : '120px', opacity: heroOpacity, transition: 'opacity 0.3s ease-out' }}>
         <div className={styles.shimmerOverlay}></div>
         <Container fluid className="px-0">
           <div className="container px-3 px-md-4">

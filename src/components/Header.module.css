@@ -1,7 +1,7 @@
 .appBar {
   background: linear-gradient(135deg, #dfe6ff 0%, #c8d5ff 100%);
   border-bottom: 2px solid var(--primary);
-  padding: 12px 0;
+  padding: 8px 0;
   width: 100%;
 }
 
