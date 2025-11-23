@@ -95,3 +95,9 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(3, 44, 125, 0.2);
 }
+
+/* RTL Support for Header */
+[dir="rtl"] .languageButton {
+  direction: rtl;
+}
+

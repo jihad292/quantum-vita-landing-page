@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import en from '../translations/en.json';
 import fr from '../translations/fr.json';
+import ar from '../translations/ar.json';
 
 type Language = 'English' | 'Français' | 'العربية';
 
@@ -8,6 +9,7 @@ interface TranslationContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: any;
+  isRTL: boolean;
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
@@ -15,7 +17,7 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 const translations: Record<string, any> = {
   'English': en,
   'Français': fr,
-  'العربية': en // Arabic will use English for now until translations are added
+  'العربية': ar
 };
 
 export const TranslationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -30,14 +32,24 @@ export const TranslationProvider: React.FC<{ children: ReactNode }> = ({ childre
   };
 
   const t = translations[language] || translations['English'];
+  const isRTL = language === 'العربية';
 
   useEffect(() => {
-    // Update HTML lang attribute for accessibility
-    document.documentElement.lang = language === 'English' ? 'en' : language === 'Français' ? 'fr' : 'ar';
-  }, [language]);
+    // Update HTML lang and dir attributes for accessibility and RTL support
+    const htmlElement = document.documentElement;
+    htmlElement.lang = language === 'English' ? 'en' : language === 'Français' ? 'fr' : 'ar';
+    htmlElement.dir = isRTL ? 'rtl' : 'ltr';
+    
+    // Add RTL class to body for additional styling control
+    if (isRTL) {
+      document.body.classList.add('rtl');
+    } else {
+      document.body.classList.remove('rtl');
+    }
+  }, [language, isRTL]);
 
   return (
-    <TranslationContext.Provider value={{ language, setLanguage, t }}>
+    <TranslationContext.Provider value={{ language, setLanguage, t, isRTL }}>
       {children}
     </TranslationContext.Provider>
   );

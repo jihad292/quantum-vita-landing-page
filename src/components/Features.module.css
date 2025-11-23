@@ -154,6 +154,14 @@
   font-size: 1.5rem;
 }
 
+[dir="rtl"] .modalHeader {
+  padding: 20px 50px 20px 30px;
+}
+
+[dir="rtl"] .modalTitle {
+  margin-left: 20px;
+}
+
 .modalHeader :global(.btn-close) {
   filter: brightness(0) invert(1);
   opacity: 0.8;
@@ -161,6 +169,11 @@
 
 .modalHeader :global(.btn-close):hover {
   opacity: 1;
+}
+
+[dir="rtl"] .modalHeader :global(.btn-close) {
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .modalBody {
@@ -394,3 +407,106 @@
 
 @media (max-width:900px) { .grid{ grid-template-columns: repeat(2,1fr); } }
 @media (max-width:600px) { .grid{ grid-template-columns: 1fr; } }
+
+/* RTL Support */
+[dir="rtl"] .decorative {
+  right: auto;
+  left: -10%;
+}
+
+[dir="rtl"] .card,
+[dir="rtl"] .title,
+[dir="rtl"] .desc {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .badge {
+  right: auto;
+  left: 16px;
+}
+
+[dir="rtl"] .buttonContainer {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .detailsButton:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .modalBody,
+[dir="rtl"] .modalDescription,
+[dir="rtl"] .sectionContent {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .navArrowLeft {
+  left: auto;
+  right: 10px;
+}
+
+[dir="rtl"] .navArrowRight {
+  right: auto;
+  left: 10px;
+}
+
+@media (max-width: 1200px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 10px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 8px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 8px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 6px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 5px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 5px;
+  }
+}

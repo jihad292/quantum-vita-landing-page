@@ -31,3 +31,15 @@
 .pillars { display:flex; flex-direction:column; gap:12px; margin-top:12px; }
 
 @media (max-width:600px) { .contentRow{ flex-direction:column; } }
+
+/* RTL Support */
+[dir="rtl"] .decorative {
+  left: auto;
+  right: -10%;
+}
+
+[dir="rtl"] .textCard,
+[dir="rtl"] .pillars {
+  direction: rtl;
+  text-align: right;
+}

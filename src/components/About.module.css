@@ -66,3 +66,19 @@
 @media (max-width: 600px) {
   .contentRow { flex-direction: column; }
 }
+
+/* RTL Support */
+[dir="rtl"] .decorative {
+  right: auto;
+  left: -10%;
+}
+
+[dir="rtl"] .text,
+[dir="rtl"] .bullets {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .bulletRow {
+  direction: rtl;
+}
