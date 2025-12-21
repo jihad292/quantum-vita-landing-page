@@ -40,16 +40,16 @@ export default function Footer() {
             <Col xs={12} md={6} className="text-center text-md-start" data-aos="fade-up" data-aos-duration="800">
               <div className={styles.connectTitle}>{t.footer.connectWithUs}</div>
               <div className={styles.socialIcons}>
-                <a href="mailto:Quantumvita@outlook.com" className={styles.iconLink}>
+                <a href="mailto:Quantumvita@outlook.com?subject=Inquiry%20about%20Quantum%20Vita&body=Hello%20Quantum%20Vita%20Team%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20services.%0A%0AThank%20you." className={styles.iconLink}>
                   <EmailIcon />
                 </a>
-                <a href="https://www.instagram.com/quantumvita?igsh=bXdscnp6NDZ0bGRt" className={styles.iconLink}>
+                <a href="https://www.instagram.com/quantumvita?igsh=bXdscnp6NDZ0bGRt" className={styles.iconLink} target="_blank" rel="noopener noreferrer">
                   <InstagramIcon />
                 </a>
-                <a href="https://www.facebook.com/share/1JyKfz7k8A/" className={styles.iconLink}>
+                <a href="https://www.facebook.com/share/1JyKfz7k8A/" className={styles.iconLink} target="_blank" rel="noopener noreferrer">
                   <FacebookIcon />
                 </a>
-                <a href="https://wa.me/96181388927" className={styles.iconLink}>
+                <a href="https://wa.me/96181388927" className={styles.iconLink} target="_blank" rel="noopener noreferrer">
                   <WhatsAppIcon />
                 </a>
               </div>
@@ -57,7 +57,9 @@ export default function Footer() {
 
             <Col xs={12} md={6} className="text-center text-md-end" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
               <div className={styles.contactText}>📧 Quantumvita@outlook.com</div>
-              <div className={styles.contactText}>📱 +961 81 388 927</div>
+              <a href="tel:+96181388927" className={styles.contactText} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                📱 +961 81 388 927
+              </a>
             </Col>
           </Row>
 

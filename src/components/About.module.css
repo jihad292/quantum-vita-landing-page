@@ -63,8 +63,61 @@
 .bulletRow { display:flex; gap:12px; align-items:flex-start; }
 .bulletDot { width:6px; height:6px; border-radius:50%; background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%); margin-top:6px; }
 
+@media (max-width: 1199px) {
+  .outer {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .image {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 991px) {
+  .outer {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+  .headingRow {
+    margin-bottom: 28px;
+  }
+  .image {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .outer {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+  .headingRow {
+    margin-bottom: 24px;
+  }
+  .image {
+    max-width: 380px;
+  }
+}
+
 @media (max-width: 600px) {
   .contentRow { flex-direction: column; }
+  .outer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  .bullets {
+    gap: 10px;
+  }
 }
 
 /* RTL Support */

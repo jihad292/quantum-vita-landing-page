@@ -98,6 +98,17 @@
 .leftSection { display:flex; flex-direction:column; gap:12px; }
 .connectTitle { font-weight:700; font-size:1rem; letter-spacing:0.5px; }
 .socialIcons { display:flex; gap:12px; }
+.socialIcons { 
+  display:flex; 
+  gap:12px; 
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .socialIcons {
+    justify-content: flex-start;
+  }
+}
 .iconLink { 
   display: flex;
   align-items: center;
@@ -121,50 +132,10 @@
 .rightSection { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
 .contactText { color: rgba(255,255,255,0.85); font-size:1.15rem; }
 .divider { height:1px; background: rgba(255,255,255,0.12); margin-bottom:16px; margin-top:16px; }
-.copyRow { 
-  display:flex; 
-  justify-content:space-between; 
-  align-items:center; 
-  gap:12px; 
-  font-size:0.85rem; 
-  color: rgba(255,255,255,0.85);
-  position: relative;
-  z-index: 2;
-}
+.copyRow { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:0.85rem; color: rgba(255,255,255,0.85); }
 
 @media (max-width:700px) {
   .mainRow { flex-direction:column; align-items:center; text-align:center; }
   .rightSection { align-items:center; }
   .copyRow { flex-direction:column; gap:6px; }
 }
-
-/* RTL Support for Footer */
-[dir="rtl"] .leftSection {
-  align-items: flex-end;
-}
-
-[dir="rtl"] .rightSection {
-  align-items: flex-start;
-}
-
-[dir="rtl"] .connectTitle,
-[dir="rtl"] .contactText {
-  direction: rtl;
-  text-align: right;
-}
-
-[dir="rtl"] .contactText {
-  unicode-bidi: plaintext;
-}
-
-[dir="rtl"] .copyRow {
-  direction: rtl;
-}
-
-@media (max-width:700px) {
-  [dir="rtl"] .leftSection,
-  [dir="rtl"] .rightSection {
-    align-items: center;
-  }
-}
-

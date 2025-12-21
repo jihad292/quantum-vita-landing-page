@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,6 +13,10 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const resizingRef = useRef(false);
+  const resizeTimerRef = useRef<number | undefined>(undefined);
+  const scrollPosRef = useRef(0);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,6 +26,12 @@ export default function App() {
 
     // Fade out effect when scrolling past components
     const handleScroll = () => {
+      // Skip fade calculations during window resize
+      if (resizingRef.current) return;
+
+      // Store current scroll position
+      scrollPosRef.current = window.pageYOffset;
+
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => {
         // Skip fade effect for Features section
@@ -52,8 +62,42 @@ export default function App() {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleResize = () => {
+      resizingRef.current = true;
+      
+      // Store scroll position at start of resize
+      scrollPosRef.current = window.pageYOffset;
+      
+      if (resizeTimerRef.current) {
+        clearTimeout(resizeTimerRef.current);
+      }
+      
+      resizeTimerRef.current = window.setTimeout(() => {
+        // Restore scroll position after resize
+        window.scrollTo(0, scrollPosRef.current);
+        
+        resizingRef.current = false;
+        
+        // Recalculate after a frame
+        requestAnimationFrame(() => {
+          handleScroll();
+        });
+      }, 150);
+    };
+
+    // Initial call
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      if (resizeTimerRef.current) {
+        clearTimeout(resizeTimerRef.current);
+      }
+    };
   }, []);
 
   return (

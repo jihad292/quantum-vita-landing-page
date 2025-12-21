@@ -10,6 +10,7 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [heroOpacity, setHeroOpacity] = useState(1);
   const [navbarOpacity, setNavbarOpacity] = useState(1);
+  const [heroMargin, setHeroMargin] = useState(window.innerWidth < 768 ? '90px' : '120px');
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,7 +21,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      const newIsMobile = window.innerWidth < 768;
+      setIsMobile(newIsMobile);
+      setHeroMargin(newIsMobile ? '90px' : '120px');
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -95,7 +98,7 @@ export default function Header() {
               />
             </Navbar.Brand>
 
-            <div className="d-none d-xl-flex gap-2 position-absolute end-0 me-3">
+            {/* <div className="d-none d-xl-flex gap-2 position-absolute end-0 me-3">
               <Button variant="primary" className={styles.glowButton}>{t.header.signIn}</Button>
               <Button variant="primary" className={styles.glowButton}>{t.header.register}</Button>
               <Button variant="primary" className={styles.glowButton}>{t.header.contactUs}</Button>
@@ -108,7 +111,7 @@ export default function Header() {
               style={{ fontSize: '1.5rem', padding: '0.25rem 0.5rem' }}
             >
               ☰
-            </Button>
+            </Button> */}
           </div>
         </Container>
       </Navbar>
@@ -139,7 +142,7 @@ export default function Header() {
         </Offcanvas.Body>
       </Offcanvas>
 
-      <div className={styles.heroOuter} style={{ marginTop: window.innerWidth < 768 ? '90px' : '120px', opacity: heroOpacity, transition: 'opacity 0.3s ease-out' }}>
+      <div className={styles.heroOuter} style={{ marginTop: heroMargin, opacity: heroOpacity, transition: 'opacity 0.3s ease-out' }}>
         <div className={styles.shimmerOverlay}></div>
         <Container fluid className="px-0">
           <div className="container px-3 px-md-4">
