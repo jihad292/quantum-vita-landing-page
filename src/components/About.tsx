@@ -20,7 +20,7 @@ export default function About() {
             <Col xs={12} lg={5} className="text-center" data-aos="fade-up" data-aos-delay="100">
               <img 
                 className={styles.image} 
-                src="/images/ABOUTUSs.jpg" 
+                src="/images/ABOUTUS.jpg" 
                 alt="About Us" 
                 style={{ width: '100%', maxWidth: '450px', height: 'auto' }} 
               />
