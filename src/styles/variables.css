@@ -1,0 +1,17 @@
+:root {
+  --primary: #032c7d;
+  --secondary: #0942ca;
+  --info: #1d97f1;
+  --darkBlue: #030d30;
+  --lightBlue: #dfe6ff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* Utility */
+.container-inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

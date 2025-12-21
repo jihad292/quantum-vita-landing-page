@@ -1,0 +1,103 @@
+.appBar {
+  background: linear-gradient(135deg, #dfe6ff 0%, #c8d5ff 100%);
+  border-bottom: 2px solid var(--primary);
+  padding: 8px 0;
+  width: 100%;
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.heroOuter {
+  background: linear-gradient(135deg, #032c7d 0%, #0942ca 50%, #1d97f1 100%);
+  padding: 80px 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer overlay effect for hero */
+.shimmerOverlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  animation: shimmerSweep 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes shimmerSweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 768px) {
+  .heroOuter {
+    padding: 48px 0;
+  }
+}
+
+.ctaButton {
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 32px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border: none;
+}
+
+.glowButton {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glowButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(9, 66, 202, 0.6),
+              0 0 40px rgba(9, 66, 202, 0.4),
+              0 0 60px rgba(9, 66, 202, 0.2);
+  filter: brightness(1.1);
+}
+
+.glowButton:active {
+  transform: translateY(0);
+  box-shadow: 0 0 15px rgba(9, 66, 202, 0.5);
+}
+
+.languageButton {
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1.5px solid var(--primary);
+  background: white;
+  color: var(--primary);
+}
+
+.languageButton:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(3, 44, 125, 0.2);
+}
+
+/* RTL Support for Header */
+[dir="rtl"] .languageButton {
+  direction: rtl;
+}
+

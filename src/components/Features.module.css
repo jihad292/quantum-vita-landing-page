@@ -1,0 +1,512 @@
+.outer {
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8eeff 100%);
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.decorative { position:absolute; bottom:-50%; right:-10%; width:400px; height:400px; border-radius:50%; background: radial-gradient(circle, rgba(29,151,241,0.05) 0%, transparent 70%); pointer-events:none; }
+.inner { max-width:1200px; margin-left:auto; margin-right:auto; padding-left:24px; padding-right:24px; }
+.headingRow { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
+.accentBar { width:4px; height:35px; background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%); border-radius:2px; }
+.sectionTitle { font-weight:700; color: var(--primary); font-size:2.2rem; }
+.grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; }
+.card { 
+  background: rgba(255,255,255,0.95); 
+  border-radius:16px; 
+  padding:16px; 
+  border:1px solid rgba(255,255,255,0.5); 
+  box-shadow:0 8px 24px rgba(3,44,125,0.08); 
+  transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s, background .4s; 
+  position:relative; 
+  overflow:hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Glow pulse effect */
+.card:hover {
+  transform: translateY(-12px) translateZ(0) rotateX(5deg) rotateY(5deg); 
+  box-shadow: 0 20px 48px rgba(3,44,125,0.18), 0 0 40px rgba(29,151,241,0.3);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.card:hover .title,
+.card:hover .desc {
+  transform: translateZ(1px);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 20px 48px rgba(3,44,125,0.18), 0 0 40px rgba(29,151,241,0.3); }
+  50% { box-shadow: 0 20px 48px rgba(3,44,125,0.18), 0 0 60px rgba(29,151,241,0.5); }
+}
+
+/* Background shimmer effect */
+.card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Color accent on hover */
+.card:hover {
+  background: linear-gradient(135deg, rgba(29,151,241,0.05) 0%, rgba(255,255,255,0.95) 50%, rgba(3,44,125,0.05) 100%);
+}
+.cardImg { width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:12px; }
+.badge { position:absolute; top:16px; right:16px; width:40px; height:40px; border-radius:50%; background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow:0 4px 12px rgba(3,44,125,0.2); }
+.title { 
+  color: var(--secondary); 
+  font-weight:700; 
+  margin-bottom:8px; 
+  font-size:1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.desc { 
+  color:#555; 
+  line-height:1.6; 
+  font-size:1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 16px;
+}
+
+/* Learn More Button Container */
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.detailsButton {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(3,44,125,0.2);
+}
+
+.detailsButton:hover {
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(3,44,125,0.3);
+}
+
+/* Modal Styles */
+.featureModal :global(.modal-dialog) {
+  pointer-events: auto;
+}
+
+.featureModal :global(.modal-content) {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureModal :global(.modal-backdrop) {
+  pointer-events: none;
+}
+
+.modalWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+}
+
+.modalHeader {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%);
+  color: white;
+  border-bottom: none;
+  padding: 20px 30px;
+}
+
+.modalTitle {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+[dir="rtl"] .modalHeader {
+  padding: 20px 50px 20px 30px;
+}
+
+[dir="rtl"] .modalTitle {
+  margin-left: 20px;
+}
+
+.modalHeader :global(.btn-close) {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.modalHeader :global(.btn-close):hover {
+  opacity: 1;
+}
+
+[dir="rtl"] .modalHeader :global(.btn-close) {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.modalBody {
+  padding: 20px 60px 30px 60px;
+  background: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  position: relative;
+}
+
+.modalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: var(--info);
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.detailSection {
+  margin-bottom: 16px;
+}
+
+.sectionLabel {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.sectionContent {
+  color: #444;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.modalDescription {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.modalFooter {
+  border-top: 1px solid #e0e0e0;
+  padding: 15px 30px;
+  background: #f8f9fa;
+}
+
+.modalFooter button {
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-weight: 600;
+}
+
+/* Navigation Arrows */
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1070;
+  box-shadow: 0 4px 16px rgba(3,44,125,0.15);
+  padding: 0;
+  line-height: 1;
+}
+
+.navArrow:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(3,44,125,0.3);
+}
+
+.navArrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.navArrowLeft {
+  left: 10px;
+}
+
+.navArrowRight {
+  right: 10px;
+}
+
+/* Responsive adjustments for arrows */
+@media (max-width: 1200px) {
+  .navArrowLeft {
+    left: 10px;
+  }
+  
+  .navArrowRight {
+    right: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .modalBody {
+    padding: 20px 55px 30px 55px;
+  }
+  
+  .navArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+  
+  .navArrowLeft {
+    left: 8px;
+  }
+  
+  .navArrowRight {
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalBody {
+    padding: 20px 50px 25px 50px;
+  }
+  
+  .navArrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+  
+  .navArrowLeft {
+    left: 8px;
+  }
+  
+  .navArrowRight {
+    right: 8px;
+  }
+  
+  .modalImage {
+    max-height: 180px;
+    margin-bottom: 16px;
+  }
+  
+  .sectionLabel {
+    font-size: 0.95rem;
+  }
+  
+  .sectionContent {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modalBody {
+    padding: 15px 45px 20px 45px;
+  }
+  
+  .navArrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  
+  .navArrowLeft {
+    left: 6px;
+  }
+  
+  .navArrowRight {
+    right: 6px;
+  }
+  
+  .modalImage {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalBody {
+    padding: 15px 40px 20px 40px;
+  }
+  
+  .navArrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .navArrowLeft {
+    left: 5px;
+  }
+  
+  .navArrowRight {
+    right: 5px;
+  }
+}
+
+@media (max-width:900px) { .grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width:600px) { .grid{ grid-template-columns: 1fr; } }
+
+/* RTL Support */
+[dir="rtl"] .decorative {
+  right: auto;
+  left: -10%;
+}
+
+[dir="rtl"] .card,
+[dir="rtl"] .title,
+[dir="rtl"] .desc {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .badge {
+  right: auto;
+  left: 16px;
+}
+
+[dir="rtl"] .buttonContainer {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .detailsButton:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .modalBody,
+[dir="rtl"] .modalDescription,
+[dir="rtl"] .sectionContent {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .navArrowLeft {
+  left: auto;
+  right: 10px;
+}
+
+[dir="rtl"] .navArrowRight {
+  right: auto;
+  left: 10px;
+}
+
+@media (max-width: 1200px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 10px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 8px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 8px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 6px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .navArrowLeft {
+    left: auto;
+    right: 5px;
+  }
+  
+  [dir="rtl"] .navArrowRight {
+    right: auto;
+    left: 5px;
+  }
+}

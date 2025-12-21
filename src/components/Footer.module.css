@@ -1,0 +1,141 @@
+.outer {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 0;
+  padding-right: 0;
+  background: linear-gradient(135deg, #032c7d 0%, #0942ca 50%, #1d97f1 100%);
+  border-top: 3px solid var(--primary);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated glow line separator at top */
+.outer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(29,151,241,0.8) 25%, 
+    rgba(255,255,255,0.9) 50%, 
+    rgba(29,151,241,0.8) 75%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: glowLineSweep 3s linear infinite;
+  filter: blur(2px);
+}
+
+@keyframes glowLineSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Pulsing background orbs */
+.outer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(29,151,241,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orbPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes orbPulse {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+/* Second pulsing orb */
+.orb2 {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orbPulse 5s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+/* Shimmer overlay effect */
+.shimmerOverlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: shimmerSweep 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerSweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+.inner { max-width:1200px; margin-left:auto; margin-right:auto; padding-left:24px; padding-right:24px; position: relative; z-index: 1; }
+.mainRow { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:24px; }
+.leftSection { display:flex; flex-direction:column; gap:12px; }
+.connectTitle { font-weight:700; font-size:1rem; letter-spacing:0.5px; }
+.socialIcons { display:flex; gap:12px; }
+.socialIcons { 
+  display:flex; 
+  gap:12px; 
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .socialIcons {
+    justify-content: flex-start;
+  }
+}
+.iconLink { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:55px; 
+  width:55px; 
+  border-radius:50%; 
+  background: rgba(255,255,255,0.1); 
+  transition: all 0.3s cubic-bezier(.4,0,.2,1); 
+  cursor:pointer;
+  text-decoration: none;
+}
+.iconLink:hover { 
+  transform: translateY(-4px) scale(1.1); 
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 8px 20px rgba(29,151,241,0.3); 
+}
+.iconLink svg {
+  display: block;
+}
+.rightSection { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.contactText { color: rgba(255,255,255,0.85); font-size:1.15rem; }
+.divider { height:1px; background: rgba(255,255,255,0.12); margin-bottom:16px; margin-top:16px; }
+.copyRow { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:0.85rem; color: rgba(255,255,255,0.85); }
+
+@media (max-width:700px) {
+  .mainRow { flex-direction:column; align-items:center; text-align:center; }
+  .rightSection { align-items:center; }
+  .copyRow { flex-direction:column; gap:6px; }
+}
