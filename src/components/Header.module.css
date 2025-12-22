@@ -96,6 +96,21 @@
   box-shadow: 0 4px 12px rgba(3, 44, 125, 0.2);
 }
 
+/* Mobile optimization for language button */
+@media (max-width: 400px) {
+  .languageButton {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .languageButton {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+}
+
 /* RTL Support for Header */
 [dir="rtl"] .languageButton {
   direction: rtl;

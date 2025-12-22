@@ -32,6 +32,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Mi Browser compatibility */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* RTL Support - Arabic Font */
@@ -95,6 +98,22 @@ body.rtl {
 
 section {
   transition: opacity 0.3s ease-out;
+}
+
+/* Mi Browser and Xiaomi device compatibility */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Ensure smooth scrolling works on Mi Browser */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 code {

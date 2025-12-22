@@ -66,7 +66,7 @@ export default function Footer() {
           <hr className={styles.divider} />
 
           <Row>
-            <Col xs={12} className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <Col xs={12} className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" style={{ position: 'relative', zIndex: 10 }}>
               <div className={styles.copyRow}>
                 <div>© {new Date().getFullYear()} {t.footer.copyright}</div>
                 <div>{t.footer.tagline}</div>

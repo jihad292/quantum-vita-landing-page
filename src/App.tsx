@@ -16,6 +16,7 @@ export default function App() {
   const resizingRef = useRef(false);
   const resizeTimerRef = useRef<number | undefined>(undefined);
   const scrollPosRef = useRef(0);
+  const scrollTimeoutRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     AOS.init({
@@ -29,53 +30,54 @@ export default function App() {
       // Skip fade calculations during window resize
       if (resizingRef.current) return;
 
-      // Store current scroll position
-      scrollPosRef.current = window.pageYOffset;
+      // Debounce scroll handling for better performance on Safari/Mi Browser
+      if (scrollTimeoutRef.current) {
+        cancelAnimationFrame(scrollTimeoutRef.current);
+      }
 
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section) => {
-        // Skip fade effect for Features section
-        if (section.querySelector('h2')?.textContent === 'Features') {
-          (section as HTMLElement).style.opacity = '1';
-          return;
-        }
+      scrollTimeoutRef.current = requestAnimationFrame(() => {
+        // Store current scroll position
+        scrollPosRef.current = window.pageYOffset;
 
-        const rect = section.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Fade when scrolling down (section going up past viewport) - starts later
-        if (rect.top < -rect.height * 0.8) {
-          const fadePoint = (Math.abs(rect.top) - rect.height * 0.8) / (rect.height * 0.7);
-          const opacity = Math.max(0, 1 - fadePoint);
-          (section as HTMLElement).style.opacity = opacity.toString();
-        } 
-        // Fade when scrolling up (section coming from below)
-        else if (rect.top > windowHeight * 0.85) {
-          const fadePoint = (rect.top - windowHeight * 0.85) / (windowHeight * 0.15);
-          const opacity = Math.max(0, 1 - fadePoint);
-          (section as HTMLElement).style.opacity = opacity.toString();
-        } 
-        else {
-          // Section is visible in viewport
-          (section as HTMLElement).style.opacity = '1';
-        }
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section) => {
+          // Skip fade effect for Features section
+          if (section.querySelector('h2')?.textContent === 'Features') {
+            (section as HTMLElement).style.opacity = '1';
+            return;
+          }
+
+          const rect = section.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // Fade when scrolling down (section going up past viewport) - starts later
+          if (rect.top < -rect.height * 0.8) {
+            const fadePoint = (Math.abs(rect.top) - rect.height * 0.8) / (rect.height * 0.7);
+            const opacity = Math.max(0, 1 - fadePoint);
+            (section as HTMLElement).style.opacity = opacity.toString();
+          } 
+          // Fade when scrolling up (section coming from below)
+          else if (rect.top > windowHeight * 0.85) {
+            const fadePoint = (rect.top - windowHeight * 0.85) / (windowHeight * 0.15);
+            const opacity = Math.max(0, 1 - fadePoint);
+            (section as HTMLElement).style.opacity = opacity.toString();
+          } 
+          else {
+            // Section is visible in viewport
+            (section as HTMLElement).style.opacity = '1';
+          }
+        });
       });
     };
 
     const handleResize = () => {
       resizingRef.current = true;
       
-      // Store scroll position at start of resize
-      scrollPosRef.current = window.pageYOffset;
-      
       if (resizeTimerRef.current) {
         clearTimeout(resizeTimerRef.current);
       }
       
       resizeTimerRef.current = window.setTimeout(() => {
-        // Restore scroll position after resize
-        window.scrollTo(0, scrollPosRef.current);
-        
         resizingRef.current = false;
         
         // Recalculate after a frame
@@ -96,6 +98,9 @@ export default function App() {
       window.removeEventListener('resize', handleResize);
       if (resizeTimerRef.current) {
         clearTimeout(resizeTimerRef.current);
+      }
+      if (scrollTimeoutRef.current) {
+        cancelAnimationFrame(scrollTimeoutRef.current);
       }
     };
   }, []);

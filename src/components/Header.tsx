@@ -67,7 +67,7 @@ export default function Header() {
           <div className="d-flex justify-content-center align-items-center w-100 px-3 px-md-4 position-relative">
             
             {/* Language Selector - Left Side */}
-            <div className="position-absolute start-0 ms-3">
+            <div className="position-absolute start-0 ms-2 ms-sm-3">
               <Dropdown>
                 <Dropdown.Toggle variant="outline-primary" size="sm" className={styles.languageButton}>
                   🌐 {language}
