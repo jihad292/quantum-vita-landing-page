@@ -19,7 +19,7 @@ export default function LoadingScreen() {
     <div className={styles.loadingScreen}>
       <div className={styles.logoContainer}>
         <img 
-          src="/images/quantum-logo.png" 
+          src="/images/Quantum-vita-logo.svg" 
           alt="Quantum Vita Logo" 
           className={styles.logo}
         />
