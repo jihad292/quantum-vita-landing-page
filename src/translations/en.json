@@ -10,27 +10,13 @@
   },
   "about": {
     "title": "About Us",
-    "description": "is a modern EMR platform built to transform the future of medicine. We",
-    "unifyWorkflows": "unify clinical workflows",
-    "description2": ", automate documentation, and deliver",
-    "aiInsights": "AI-powered insights",
-    "description3": "designed to reduce clinician workload and improve patient outcomes.",
-    "bullet1": "Unified clinical workflows",
-    "bullet2": "Automated documentation",
-    "bullet3": "AI-powered insights"
+    "paragraph1": "Quantum Vita was created to address a key problem in modern healthcare: systems that slow clinicians instead of supporting them. Doctors spend too much time on fragmented software, repetitive documentation, and administrative work.",
+    "paragraph2": "Quantum Vita reduces this friction with a platform built around real clinical workflows. It unifies AI-powered documentation, medical records, laboratory data, and clinical intelligence in one secure system. Developed by experts in medicine and artificial intelligence, it supports decisions without disrupting judgment."
   },
   "aim": {
     "title": "Our Aim",
-    "description1": "Improve the quality of",
-    "medicalCare": "medical care",
-    "description2": "while keeping healthcare costs at the",
-    "lowestLevels": "lowest possible levels",
-    "description3": "-powered by",
-    "aiAutomation": "AI, automation, and seamless clinical workflows.",
-    "keyPillars": "Key Pillars",
-    "pillar1": "Quality improvement through technology",
-    "pillar2": "Cost optimization through automation",
-    "pillar3": "Seamless workflow integration"
+    "paragraph1": "At Quantum Vita, our aim is to revolutionize healthcare through advanced AI and smart automation. We empower clinics to deliver faster, safer, and more accurate patient care. Every feature is built to simplify complex clinical workflows.",
+    "paragraph2": "Intelligent EMR systems and real-time lab integrations improve efficiency and accuracy. Our mission is to make every clinical decision smarter and more informed. Driven by innovation and reliability, Quantum Vita is shaping the future of modern healthcare."
   },
   "features": {
     "title": "Features",
@@ -38,75 +24,66 @@
     "close": "Close",
     "feature1": {
       "title": "AI-Assisted Speech to Text",
-      "text": "Convert patient consultations into clinical notes effortlessly",
+      "text": "Dictate patient notes naturally; let AI handle the documentation.",
       "detailTitle": "AI-Assisted Speech to Text",
-      "description": "Quantum Vita's AI-powered speech-to-text transforms spoken consultations into structured clinical notes in real time. The system accurately captures medical terminology, auto-formats according to clinical standards, and reduces charting time by up to 70%, allowing clinicians to focus on patient care rather than paperwork.",
-      "clinicalImpact": "Reduce documentation time by up to 70%, minimize errors, and ensure comprehensive note-taking without disrupting patient interactions.",
-      "visualCue": "🎤 Voice-to-Text in Real Time"
+      "description": "Physicians can speak freely during consultations while Quantum Vita's AI converts speech into structured, editable medical notes in real-time. It recognizes medical terminology, abbreviations, and context, automatically organizing notes by history, examination, assessment, and plan.",
+      "clinicalImpact": "Saves hours per week, reduces errors, enhances note completeness, and ensures records are ready for audits or research."
     },
     "feature2": {
       "title": "AI Diagnostics & Support Chat-Bot",
-      "text": "Instant access to clinical decision support and diagnostic suggestions",
+      "text": "Your AI assistant that reviews, advises, and learns.",
       "detailTitle": "AI Diagnostics & Support Chat-Bot",
-      "description": "A conversational AI assistant trained on medical literature and clinical guidelines. It provides differential diagnoses, treatment recommendations, drug interaction warnings, and evidence-based protocols. The chatbot learns from local practice patterns while maintaining strict data privacy and compliance.",
-      "clinicalImpact": "Accelerate diagnosis accuracy, reduce cognitive load, and provide immediate access to evidence-based recommendations at the point of care.",
-      "visualCue": "🤖 AI-Powered Clinical Assistant"
+      "description": "The chatbot analyzes patient history, labs, imaging, and prior interventions to suggest diagnoses, differential considerations, and guideline-based recommendations. It answers clinical queries, flags abnormal results, and evolves with each doctor interaction.",
+      "clinicalImpact": "Improves decision-making, reduces cognitive load, enhances patient safety, and provides a second expert review at the point of care."
     },
     "feature3": {
       "title": "Labs & Imaging Integration",
-      "text": "Seamlessly order, track, and review lab results and medical imaging",
+      "text": "Centralize and visualize all diagnostic data seamlessly.",
       "detailTitle": "Labs & Imaging Integration",
-      "description": "Fully integrated laboratory and imaging workflows allow clinicians to order tests, view results, compare trends over time, and access imaging directly within the patient chart. Automated alerts notify providers of critical values or abnormal findings, ensuring timely clinical action.",
-      "clinicalImpact": "Streamline test ordering, reduce turnaround time for results, and ensure no critical finding goes unnoticed.",
-      "visualCue": "🧪 Unified Lab & Imaging Hub"
+      "description": "Labs and imaging are integrated directly into patient records via uploads, digital imports, or QR scans. Abnormal results are flagged, trends tracked, and visual graphs generated. Data is structured for easy retrieval, research, or audits.",
+      "clinicalImpact": "Faster diagnosis, better monitoring, data-driven treatment planning, and reduced report loss."
     },
     "feature4": {
       "title": "One-Click Data Collection",
-      "text": "Capture vital signs, symptoms, and patient history with minimal effort",
+      "text": "Turn every patient visit into research-ready data.",
       "detailTitle": "One-Click Data Collection",
-      "description": "Pre-configured templates and smart forms enable rapid data entry for vital signs, symptoms, medications, and patient history. Auto-population from previous visits and integration with connected devices (e.g., BP monitors, glucometers) further reduce manual input and improve data accuracy.",
-      "clinicalImpact": "Save time on data entry, reduce transcription errors, and ensure consistent, high-quality documentation.",
-      "visualCue": "📋 Instant Data Capture"
+      "description": "All encounter details—including demographics, vitals, labs, imaging, and medications—are captured instantly in structured formats. Supports inclusion/exclusion criteria and auto-generates datasets for analytics or studies.",
+      "clinicalImpact": "Enables clinics to function as research centers, simplifies study participation, and facilitates evidence-based improvements"
     },
     "feature5": {
       "title": "Latest Articles Updates",
-      "text": "Stay informed with curated medical news and research updates",
+      "text": "Stay current without leaving your EMR.",
       "detailTitle": "Latest Articles Updates",
-      "description": "Quantum Vita delivers personalized feeds of the latest medical research, clinical guidelines, and industry news tailored to each clinician's specialty. Stay up-to-date with evidence-based practices without leaving the platform.",
-      "clinicalImpact": "Keep clinical knowledge current, adopt new guidelines faster, and improve treatment quality through continuous learning.",
-      "visualCue": "📰 Personalized Medical Newsfeed"
+      "description": "Quantum Vita delivers filtered medical literature, journal updates, and guideline changes directly into the platform. Summaries highlight key insights for fast review, with links to full articles.",
+      "clinicalImpact": "Ensures evidence-based decisions, continuous learning, and keeps clinicians aligned with evolving best practices."
     },
     "feature6": {
       "title": "Administrative Automation",
-      "text": "Automate scheduling, billing, and compliance tasks to save time",
+      "text": "Streamline clinic workflows and reduce paperwork.",
       "detailTitle": "Administrative Automation",
-      "description": "Automate appointment scheduling, insurance verification, billing codes, and compliance reporting. The system handles repetitive administrative tasks in the background, freeing staff to focus on patient care and reducing overhead costs.",
-      "clinicalImpact": "Reduce administrative burden, lower operational costs, and minimize billing errors and compliance risks.",
-      "visualCue": "⚙️ Automated Admin Workflows"
+      "description": "Automates scheduling, reminders, insurance forms, and electronic consents. Staff workflows are prioritized with notifications, reducing errors and delays.",
+      "clinicalImpact": "Saves staff and doctor time, improves patient flow, and allows clinicians to focus on care rather than administration."
     },
     "feature7": {
       "title": "Auditing",
-      "text": "Track and review clinical activities for compliance and quality assurance",
+      "text": "Track every action for compliance and quality assurance.",
       "detailTitle": "Auditing",
-      "description": "Comprehensive audit trails log every action taken in the EMR, ensuring accountability and compliance with regulatory standards. Automated reports help practices prepare for accreditation reviews and identify areas for quality improvement.",
-      "clinicalImpact": "Ensure regulatory compliance, support quality improvement initiatives, and protect against legal and financial risks.",
-      "visualCue": "🔍 Complete Audit Trail"
+      "description": "Logs all clinical and administrative actions with timestamps and user IDs. Dashboards highlight patterns, deviations, and workflow bottlenecks. Supports regulatory audits, quality control, and risk management.",
+      "clinicalImpact": "Ensures compliance, enhances quality, protects against medico-legal risk, and validates clinical research."
     },
     "feature8": {
       "title": "Clinical Impact",
-      "text": "Measure and optimize outcomes to improve patient care quality",
+      "text": "Measure outcomes and optimize patient care.",
       "detailTitle": "Clinical Impact",
-      "description": "Advanced analytics dashboards track key clinical metrics, patient outcomes, and performance indicators. Quantum Vita helps practices identify trends, benchmark against peers, and implement data-driven improvements to care delivery.",
-      "clinicalImpact": "Drive continuous quality improvement, enhance patient outcomes, and demonstrate value to stakeholders.",
-      "visualCue": "📊 Outcome Analytics Dashboard"
+      "description": "Tracks patient responses to interventions, lab trends, vital changes, and complications. Correlation analytics identify which treatments work best for specific patient groups, informing data-driven care improvements.",
+      "clinicalImpact": "Enables evidence-based practice optimization, personalized treatment planning, and resource allocation."
     },
     "feature9": {
       "title": "Cloud-Based Encryption",
-      "text": "Secure, encrypted data storage ensuring privacy and compliance",
+      "text": "Secure, compliant access to patient data anytime, anywhere.",
       "detailTitle": "Cloud-Based Encryption",
-      "description": "All patient data is encrypted at rest and in transit using industry-standard protocols. Cloud-based infrastructure ensures high availability, disaster recovery, and seamless scalability while maintaining strict compliance with HIPAA, GDPR, and other data protection regulations.",
-      "clinicalImpact": "Protect patient privacy, ensure business continuity, and meet all regulatory requirements without compromise.",
-      "visualCue": "🔐 Military-Grade Security"
+      "description": "Patient records are stored on encrypted cloud servers with HIPAA/GDPR compliance. Role-based access, multi-level authentication, and audit logs ensure security while allowing collaboration across devices.",
+      "clinicalImpact": "Safeguards patient privacy, enables real-time access, and supports secure multi-device workflows."
     }
   },
   "footer": {

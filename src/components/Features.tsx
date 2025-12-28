@@ -163,7 +163,6 @@ export default function Features() {
             {features.map((f, i) => (
               <Col xs={12} md={6} lg={4} key={i} data-aos="zoom-in" data-aos-delay={i * 50}>
                 <Card className={styles.card} onClick={() => handleShowDetails(f, i)} style={{ cursor: 'pointer' }}>
-                  <div className={styles.badge}>{i + 1}</div>
                   <Card.Img variant="top" src={f.image} alt={f.title} className={styles.cardImg} />
                   <Card.Body>
                     <Card.Title className={styles.title}>{f.title}</Card.Title>
