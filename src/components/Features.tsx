@@ -147,7 +147,7 @@ export default function Features() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [showModal, currentIndex, features]);
+  }, [showModal, currentIndex, features, handleNext, handlePrevious]);
 
   return (
     <section className={styles.outer}>

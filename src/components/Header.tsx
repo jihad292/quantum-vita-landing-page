@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Button, Container, Offcanvas, Dropdown } from 'react-bootstrap';
+import { Navbar, Nav, Container, Offcanvas, Dropdown } from 'react-bootstrap';
 import styles from "./Header.module.css";
 import "../styles/variables.css";
 import { useTranslation } from '../contexts/TranslationContext';
@@ -13,7 +13,6 @@ export default function Header() {
   const [heroMargin, setHeroMargin] = useState(window.innerWidth < 768 ? '90px' : '120px');
   
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleLanguageChange = (lang: 'English' | 'Français' | 'العربية') => {
     setLanguage(lang);
@@ -35,7 +34,6 @@ export default function Header() {
       if (!heroElement) return;
 
       const rect = heroElement.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
       const scrolled = window.pageYOffset;
 
       // Fade hero section when scrolling down
